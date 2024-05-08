@@ -22,7 +22,7 @@ class SportsAppTest : BaseTest() {
         navigateToTeamStatsPage()
         verifyStatsPageElements()
         clickBackButton()
-        verifyTeamPageIsDisplayed()
+        verifyFavoritesPageIsDisplayed()
     }
 
     private fun clickGetStartedButton() {
@@ -66,7 +66,7 @@ class SportsAppTest : BaseTest() {
     private fun clickBackButton() {
         basePage.clickBackButton(driver)
     }
-    private fun verifyTeamPageIsDisplayed() {
+    private fun verifyFavoritesPageIsDisplayed() {
         basePage.isElementPresent(driver, SportsEnum.TORONTO_BLUE_JAYS_ICON.value)
     }
 }
