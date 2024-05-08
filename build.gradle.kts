@@ -1,7 +1,5 @@
 plugins {
     kotlin("jvm") version "1.9.23"
-    kotlin("plugin.jpa") version "1.5.31"
-    id("com.github.johnrengelman.shadow") version "7.0.0"
 }
 
 group = "org.example"
@@ -19,11 +17,7 @@ dependencies {
 
 
     // Testing
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.2")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.2")
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.2")
-
-
 }
 
 tasks.test {

@@ -1,11 +1,11 @@
 import org.junit.jupiter.api.Test
 import sportsapp.utils.SportsEnum
-import sportsapp.utils.PageActions
+import sportsapp.BasePage
 
 class SportsAppTest : BaseTest() {
-    private val pageActions = PageActions()
+    private val basePage = BasePage()
     @Test
-    //In SportsAppTest, you have a long method testAutomationFlow that
+    // In SportsAppTest, you have a long method testAutomationFlow that
     // performs multiple actions. Consider breaking it down into smaller,
     // more focused tests, each with a clear purpose. This will make the code
     // more maintainable and easier to understand.
@@ -26,47 +26,47 @@ class SportsAppTest : BaseTest() {
     }
 
     private fun clickGetStartedButton() {
-        pageActions.clickElementById(driver, SportsEnum.GET_STARTED_BUTTON.value)
+        basePage.clickElementById(driver, SportsEnum.GET_STARTED_BUTTON.value)
     }
     private fun favoriteLeague() {
-        pageActions.clickElementByCss(driver, SportsEnum.MLB_BASEBALL.value)
-        pageActions.clickElementById(driver, SportsEnum.CONTINUE_BUTTON.value)
+        basePage.clickElementByCss(driver, SportsEnum.MLB_BASEBALL.value)
+        basePage.clickElementById(driver, SportsEnum.CONTINUE_BUTTON.value)
     }
     private fun chooseLocation() {
-        pageActions.clickElementByCss(driver, SportsEnum.MAYBE_LATER_BUTTON.value)
+        basePage.clickElementByCss(driver, SportsEnum.MAYBE_LATER_BUTTON.value)
     }
     private fun favoriteTeam() {
-        pageActions.clickElementByCss(driver, SportsEnum.TORONTO_BLUE_JAYS.value)
-        pageActions.clickElementById(driver, SportsEnum.CONTINUE_BUTTON.value)
-        pageActions.clickElementById(driver, SportsEnum.DONE_BUTTON.value)
+        basePage.clickElementByCss(driver, SportsEnum.TORONTO_BLUE_JAYS.value)
+        basePage.clickElementById(driver, SportsEnum.CONTINUE_BUTTON.value)
+        basePage.clickElementById(driver, SportsEnum.DONE_BUTTON.value)
     }
     private fun dismissMessaging() {
-        pageActions.clickElementByCss(driver, SportsEnum.MAYBE_LATER_BUTTON.value)
+        basePage.clickElementByCss(driver, SportsEnum.MAYBE_LATER_BUTTON.value)
     }
     private fun allowNotifications() {
-        pageActions.clickElementByClass(driver, SportsEnum.ALLOW_BUTTON.value)
-        pageActions.clickElementByCss(driver, SportsEnum.OK_GOT_IT_BUTTON.value)
+        basePage.clickElementByClass(driver, SportsEnum.ALLOW_BUTTON.value)
+        basePage.clickElementByCss(driver, SportsEnum.OK_GOT_IT_BUTTON.value)
     }
     private fun navigateToTeamPage() {
-        pageActions.clickElementByCss(driver, SportsEnum.TORONTO_BLUE_JAYS_ICON.value)
+        basePage.clickElementByCss(driver, SportsEnum.TORONTO_BLUE_JAYS_ICON.value)
     }
     private fun dismissModal() {
-        pageActions.clickDismissModal(driver)
+        basePage.clickDismissModal(driver)
     }
     private fun verifyCorrectPage() {
-        pageActions.isElementPresent(driver, SportsEnum.TORONTO_BLUE_JAYS.value)
+        basePage.isElementPresent(driver, SportsEnum.TORONTO_BLUE_JAYS.value)
     }
     private fun navigateToTeamStatsPage() {
-        pageActions.clickElementByCss(driver, SportsEnum.TEAM_STATS_PAGE.value)
+        basePage.clickElementByCss(driver, SportsEnum.TEAM_STATS_PAGE.value)
     }
     private fun verifyStatsPageElements() {
-        pageActions.isElementPresent(driver, SportsEnum.STATS_LABEL.value)
-        pageActions.isElementPresent(driver, SportsEnum.RANK_LABEL.value)
+        basePage.isElementPresent(driver, SportsEnum.STATS_LABEL.value)
+        basePage.isElementPresent(driver, SportsEnum.RANK_LABEL.value)
     }
     private fun clickBackButton() {
-        pageActions.clickBackButton(driver)
+        basePage.clickBackButton(driver)
     }
     private fun verifyTeamPageIsDisplayed() {
-        pageActions.isElementPresent(driver, SportsEnum.TORONTO_BLUE_JAYS_ICON.value)
+        basePage.isElementPresent(driver, SportsEnum.TORONTO_BLUE_JAYS_ICON.value)
     }
 }

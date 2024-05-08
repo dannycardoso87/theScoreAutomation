@@ -1,13 +1,14 @@
-package sportsapp.utils
+package sportsapp
 import io.appium.java_client.AppiumDriver
 import io.appium.java_client.MobileElement
 import org.openqa.selenium.By
 import org.openqa.selenium.support.ui.ExpectedConditions
 import org.openqa.selenium.support.ui.WebDriverWait
 
-class PageActions {
+
+class BasePage {
     companion object {
-        private const val TIMEOUT_SECONDS = 10
+        private const val TIMEOUT_SECONDS = 15
         private const val ACTION_BUTTON_ID = "com.fivemobile.thescore:id/action_button_text"
         private const val DISMISS_MODAL_ID = "com.fivemobile.thescore:id/dismiss_modal"
         private const val BACK_BUTTON_CLASS = "android.widget.ImageButton"

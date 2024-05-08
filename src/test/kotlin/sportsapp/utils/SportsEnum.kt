@@ -13,5 +13,4 @@ enum class SportsEnum(val value: String) {
     TORONTO_BLUE_JAYS_ICON("TOR"),
     STATS_LABEL("STATS"),
     RANK_LABEL("(RANK)")
-
 }

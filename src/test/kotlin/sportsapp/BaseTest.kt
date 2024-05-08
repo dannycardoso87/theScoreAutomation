@@ -5,24 +5,29 @@ import io.appium.java_client.remote.MobileCapabilityType
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 import org.openqa.selenium.remote.DesiredCapabilities
+import java.io.FileInputStream
 import java.net.URL
+import java.util.*
 
 open class BaseTest {
     lateinit var driver: AppiumDriver<MobileElement>
-
+    object Config {
+        const val CONFIG_FILE_PATH = "config.properties"
+    }
     @BeforeEach
     fun setUp() {
         val capabilities = DesiredCapabilities()
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android")
-        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "emulator-5554")
+        val deviceSerialNumber = Runtime.getRuntime().exec("adb devices").inputStream.bufferedReader().use { it.readText() }.trim().split("\n")[1].split("\\s+".toRegex())[0]
+        capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, deviceSerialNumber)
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2")
-        capabilities.setCapability(MobileCapabilityType.APP, "/Users/danny/Downloads/Documents/theScore/thescore.apk")
+        val properties = Properties()
+        properties.load(FileInputStream(Config.CONFIG_FILE_PATH))
+        capabilities.setCapability(MobileCapabilityType.APP, properties.getProperty("apk_file_path"))
+        val appiumServerUrl = properties.getProperty("appium_server_url")
 
-        //In BaseTest, you have hardcoded values like "/Users/danny/Downloads/Documents/theScore/thescore.apk"
-        // and "http://127.0.0.1:4723/". Consider using environment variables or a configuration file to store these values.
-        driver = AndroidDriver(URL("http://127.0.0.1:4723/"), capabilities)
+        driver = AndroidDriver(URL(appiumServerUrl), capabilities)
     }
-
     @AfterEach
     fun tearDown() {
         driver.quit()
