@@ -1,6 +1,5 @@
 package sportsapp.utils
 enum class SportsEnum(val value: String) {
-    // add descricao de cada enum
     GET_STARTED_BUTTON("Get Started"),
     MLB_BASEBALL("MLB Baseball"),
     TEAM_STATS_PAGE("TEAM STATS"),

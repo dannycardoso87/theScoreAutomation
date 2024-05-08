@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="18828961-118f-4c9f-bb7f-1e4f86d8eca6" name="Changes" comment="Readme file and other adjustments.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/sportsapp/SportsAppTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/sportsapp/SportsAppTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/sportsapp/utils/SportsEnum.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/sportsapp/utils/SportsEnum.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +84,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Improvements",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/danny/IdeaProjects/theScoreAutomation2",
     "project.structure.last.edited": "Modules",
