@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18828961-118f-4c9f-bb7f-1e4f86d8eca6" name="Changes" comment="Readme file and other adjustments.">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/sportsapp/pages/FavoriteLeaguePage.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/sportsapp/pages/FavoriteTeamPage.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/sportsapp/pages/GetStartedPage.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/sportsapp/pages/MainPage.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/sportsapp/pages/TeamPage.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/sportsapp/BasePage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/sportsapp/pages/BasePage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/sportsapp/BaseTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/sportsapp/BaseTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/sportsapp/SportsAppTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/sportsapp/SportsAppTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +91,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Improvements",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/danny/IdeaProjects/theScoreAutomation2",
     "project.structure.last.edited": "Modules",
@@ -98,8 +104,12 @@
       <recent name="$PROJECT_DIR$/src/main/kotlin/demo" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="sportsapp.pages" />
       <recent name="sportsapp" />
       <recent name="demo" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="sportsapp.pages" />
     </key>
   </component>
   <component name="RunManager" selected="Gradle.SportsAppTest">
@@ -194,8 +204,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.SportsAppTest" />
-        <item itemvalue="JUnit.SportsAppTest" />
         <item itemvalue="Gradle.SportsAppTest.testAutomationFlow" />
+        <item itemvalue="JUnit.SportsAppTest" />
         <item itemvalue="Kotlin.MainKt" />
         <item itemvalue="Gradle.SportsAppTest.testOnboardingFlow" />
       </list>

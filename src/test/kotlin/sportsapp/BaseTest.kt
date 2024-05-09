@@ -10,7 +10,7 @@ import java.net.URL
 import java.util.*
 
 open class BaseTest {
-    lateinit var driver: AppiumDriver<MobileElement>
+    lateinit var driver: AndroidDriver<MobileElement>
     object Config {
         const val CONFIG_FILE_PATH = "config.properties"
     }
