@@ -1,6 +1,10 @@
+import base.BaseTest
+import extensions.ScreenshotOnFailure
 import org.junit.jupiter.api.Test
-import sportsapp.pages.*
+import org.junit.jupiter.api.extension.ExtendWith
+import pages.*
 
+@ExtendWith(ScreenshotOnFailure::class)
 class SportsAppTest : BaseTest() {
     @Test
     fun testAutomationFlow() {
@@ -11,29 +15,55 @@ class SportsAppTest : BaseTest() {
         val mainPage = MainPage(driver)
         val teamPage = TeamPage(driver)
 
-        performOnboardingFlow(getStartedPage, favoriteLeaguePage, basePage, favoriteTeamPage)
-        navigateToTeamPage(mainPage, basePage)
+        navigateToGetStartedPage(getStartedPage)
+        navigateToFavoriteLeaguePage(favoriteLeaguePage,basePage)
+        declineLocationSharing(basePage)
+        navigateToFavoriteTeamPage(favoriteTeamPage, basePage)
+        verifyTeamAndLeagueNotification(basePage)
+        declineNewsSharing(basePage)
+        verifyAppNotification(basePage)
+        verifyBettingPopup(basePage)
+        navigateToTeamPage(mainPage)
         verifyTeamPage(teamPage)
         navigateToSubTabPage(teamPage)
         verifyToSubTabPage(teamPage)
         navigateBackToMainPage(basePage, mainPage)
     }
-    private fun performOnboardingFlow(getStartedPage: GetStartedPage, favoriteLeaguePage: FavoriteLeaguePage, basePage: BasePage, favoriteTeamPage: FavoriteTeamPage,
-    ) {
+    private fun navigateToGetStartedPage(getStartedPage: GetStartedPage) {
         getStartedPage.clickGetStartedButton()
+    }
+
+    private fun navigateToFavoriteLeaguePage(favoriteLeaguePage: FavoriteLeaguePage, basePage: BasePage) {
         favoriteLeaguePage.clickFavoriteLeagueButton("MLB Baseball")
         basePage.clickContinueButton()
+    }
+
+    private fun declineLocationSharing(basePage: BasePage){
         basePage.clickMaybeLaterButton()
+    }
+
+    private fun navigateToFavoriteTeamPage(favoriteTeamPage: FavoriteTeamPage, basePage: BasePage){
         favoriteTeamPage.clickFavoriteTeamButton("Toronto Blue Jays")
         basePage.clickContinueButton()
-        basePage.clickDoneButton()
-        basePage.clickMaybeLaterButton()
-        basePage.clickAllowNotificationButton()
-        basePage.clickOkGotItButton()
     }
-    private fun navigateToTeamPage(mainPage: MainPage,basePage: BasePage) {
-        mainPage.clickTeamIcon("TOR")
+
+    private fun verifyTeamAndLeagueNotification(basePage: BasePage){
+        basePage.clickDoneButton()
+    }
+
+    private fun declineNewsSharing(basePage: BasePage){
+        basePage.clickMaybeLaterButton()
+    }
+    private fun verifyAppNotification(basePage: BasePage){
+        basePage.clickAllowNotificationButton()
+    }
+
+    private fun verifyBettingPopup(basePage: BasePage){
         basePage.clickCloseModalButton()
+    }
+
+    private fun navigateToTeamPage(mainPage: MainPage) {
+        mainPage.clickTeamIcon("TOR")
     }
     private fun verifyTeamPage(teamPage: TeamPage) {
         teamPage.verifyPageTitle("Toronto Blue Jays")
